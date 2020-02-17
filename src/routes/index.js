@@ -1,9 +1,8 @@
 import { Router } from 'express'
-import { getUsers, createUser } from './user'
+import { investment } from './investment'
 
 const router = Router()
 
-router.get('/user', getUsers)
-router.post('/user', createUser)
+router.post('/investment/:idInvestor/:quantity/:category', investment)
 
 export default router

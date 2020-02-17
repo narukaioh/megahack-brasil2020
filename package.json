@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest --coverage --verbose --runInBand --detectOpenHandles",
-    "start": "nodemon --exec babel-node src/index.js"
+    "up:stubs": "json-server jsonserver/db.json --port 9999",
+    "start": "nodemon --exec babel-node src/index.js",
+    "test:debugger": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "keywords": [
     "nodejs"
@@ -24,6 +26,7 @@
     "sinon": "^8.1.1"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

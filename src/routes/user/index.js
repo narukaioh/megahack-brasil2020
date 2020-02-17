@@ -1,5 +1,5 @@
 
-import UserService from '../../services/postgres'
+import UserService from '../../services/users'
 
 export const getUsers = async (req, res, next) => {
   try {

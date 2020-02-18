@@ -1,9 +1,11 @@
 import { Router } from 'express'
-import { getUsers, createUser } from './user'
+import { investment } from './investment'
+import { getClientBag, postBag } from './bag'
 
 const router = Router()
 
-router.get('/user', getUsers)
-router.post('/user', createUser)
+router.post('/investment/:idInvestor/:quantity/:category', investment)
+router.get('/bagbank/:clientId', getClientBag)
+router.post('/bagbank/:clientId/:amount', postBag)
 
 export default router

@@ -1,0 +1,54 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "category": "A",
+      "bag": {
+        "amount": 260
+      },
+      "loan": {}
+    },
+    {
+      "id": 2,
+      "category": "B",
+      "bag": {
+        "amount": 300
+      },
+      "loan": {}
+    },
+    {
+      "id": 3,
+      "category": "A",
+      "bag": {
+        "amount": 0
+      },
+      "loan": {
+        "id": 1,
+        "active": false,
+        "amountRequested": 50,
+        "amountReceived": 50
+      }
+    },
+    {
+      "id": 4,
+      "category": "A",
+      "bag": {
+        "amount": 0
+      },
+      "loan": {
+        "id": 1,
+        "active": false,
+        "amountRequested": 180,
+        "amountReceived": 180
+      }
+    },
+    {
+      "category": "A",
+      "bag": {
+        "amount": 5000
+      },
+      "loan": {},
+      "id": 5
+    }
+  ]
+}

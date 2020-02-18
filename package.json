@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --coverage --verbose --runInBand --detectOpenHandles",
     "up:stubs": "json-server jsonserver/db.json --port 9999",
-    "start": "nodemon --exec babel-node src/index.js",
+    "start:dev": "nodemon --exec babel-node src/index.js",
+    "start": "node --exec babel-node src/index.js",
     "test:debugger": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "jest": {

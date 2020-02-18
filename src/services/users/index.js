@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const client = axios.create({
-  baseURL: 'http://localhost:9999/',
+  baseURL: 'https://umhelp-users-api-service.herokuapp.com/',
   timeout: 3000
 })
 

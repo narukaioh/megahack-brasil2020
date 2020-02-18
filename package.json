@@ -15,6 +15,9 @@
   "keywords": [
     "nodejs"
   ],
+  "engines": {
+    "node": "12.x"
+  },
   "author": "Ju Dantas",
   "license": "ISC",
   "devDependencies": {

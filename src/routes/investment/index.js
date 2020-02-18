@@ -17,3 +17,17 @@ export const investment = async (req, res, next) => {
     next(e)
   }
 }
+
+export const loan = async (req, res, next) => {
+  try {
+    const { clientId, amount, parcels } = req.params || req.body || req.query
+    let client = await UserService.get(clientId)
+    client.loan.active = true
+    client.loan.amountRequested = parseFloat(amount)
+    client.loan.parcels = parcels
+    let response = await UserService.update(client)
+    res.json(response)
+  } catch (e) {
+    next(e)
+  }
+}

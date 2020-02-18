@@ -15,8 +15,10 @@ const update = async (investor) => {
   return response.data
 }
 
-const updateUsers = (users) => {
-  return users.map(user => update(user))
+const updateUsers = async (users) => {
+  return Promise.all(users.map( async user => { 
+    return await update(user)
+  }))
 }
 
 const getClientsByCategory = async (idInvestor, category) => {

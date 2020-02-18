@@ -47,7 +47,6 @@ export const invest = (invester, quantity, clients) => {
   let clientsWithLoans = getClientsWithLoansActives(clients)
   clientsWithLoans = spreadMoney(clientsWithLoans, quantity)
   clientsWithLoans.clients.push(invester)
-  console.log(clientsWithLoans.clients,  clientsWithLoans.amount)
   return { 
     users: [ ...clientsWithLoans.clients ],
     amount: clientsWithLoans.amount 

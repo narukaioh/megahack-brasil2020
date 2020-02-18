@@ -4,7 +4,7 @@
       "id": 1,
       "category": "A",
       "bag": {
-        "amount": 60
+        "amount": 320
       },
       "loan": {}
     },
@@ -23,9 +23,10 @@
         "amount": 0
       },
       "loan": {
-          "id": 1,
-          "active": true,
-          "quantity": 50
+        "id": 1,
+        "active": false,
+        "amountRequested": 50,
+        "amountReceived": 50
       }
     },
     {
@@ -35,8 +36,10 @@
         "amount": 0
       },
       "loan": {
-          "id": 2,
-          "active": false
+        "id": 1,
+        "active": true,
+        "amountRequested": 180,
+        "amountReceived": 130
       }
     }
   ]

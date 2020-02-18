@@ -5,19 +5,30 @@ const client = axios.create({
   timeout: 3000
 })
 
+const get = async (id) => {
+  const response = await client.get(`/user?id=${id}`)
+  return response.data.shift()
+}
+
+const update = async (investor) => {
+  const response = await client.put(`/user/${investor.id}`, investor)
+  return response.data
+}
+
+const updateUsers = (users) => {
+  return users.map(user => update(user))
+}
+
+const getClientsByCategory = async (idInvestor, category) => {
+  const response = await client.get(`/user?id_ne=${idInvestor}&category=${category}`)
+  return response.data
+}
+
 const UserService = {
-  get: async (id) => {
-    const response = await client.get(`/user?id=${id}`)
-    return response.data.shift()
-  },
-  update: async (investor) => {
-    const response = await client.put(`/user/${investor.id}`, investor)
-    return response.data
-  },
-  getClientsByCategory: async (idInvestor, category) => {
-    const response = await client.get(`/user?id_ne=${idInvestor}&category=${category}`)
-    return response.data
-  },
+  get: get,
+  update: update,
+  updateUsers: updateUsers,
+  getClientsByCategory: getClientsByCategory,
   list: () => {}, 
   create: (user) => { return user }
 }

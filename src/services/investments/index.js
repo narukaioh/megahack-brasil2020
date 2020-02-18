@@ -1,6 +1,3 @@
-const hasLoanActive = loans => {
-  return getLoanActive(loans).length > 0
-}
 
 const getClientsWithLoansActives = clients => {
   return clients.filter(client => client.loan.active)
@@ -49,6 +46,10 @@ export const invest = (invester, quantity, clients) => {
   invester.bag.amount = invester.bag.amount - quantity
   let clientsWithLoans = getClientsWithLoansActives(clients)
   clientsWithLoans = spreadMoney(clientsWithLoans, quantity)
-  console.log(clientsWithLoans)
-  return invester
+  clientsWithLoans.clients.push(invester)
+  console.log(clientsWithLoans.clients,  clientsWithLoans.amount)
+  return { 
+    users: [ ...clientsWithLoans.clients ],
+    amount: clientsWithLoans.amount 
+  }
 }

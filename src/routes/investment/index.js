@@ -1,4 +1,4 @@
-import { invest } from '../../services/procob'
+import { invest } from '../../services/investments'
 import UserService from '../../services/users'
 
 export const investment = async (req, res, next) => {
@@ -7,9 +7,12 @@ export const investment = async (req, res, next) => {
   try {
     let investor = await UserService.get(idInvestor)
     let clients = await UserService.getClientsByCategory(idInvestor, category)
-    investor = invest(investor, quantity, clients)
-    investor = await UserService.update(investor)
-    res.json(investor)
+    let response = {}
+    if (clients !== undefined && clients !== null && clients.length > 0) {
+      let investment  = invest(investor, quantity, clients)
+      response = await UserService.updateUsers(investment.users)
+    }
+    res.json(response)
   } catch (e) {
     next(e)
   }

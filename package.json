@@ -8,7 +8,7 @@
     "up:stubs": "json-server jsonserver/db.json --port 9999",
     "start:dev": "nodemon --exec babel-node -- src/index.js",
     "start": "node ./build",
-    "build": "babel -d build ./src -s",
+    "vbuild": "babel -d build ./src -s",
     "test:debugger": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "jest": {

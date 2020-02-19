@@ -3,7 +3,7 @@ import Bag from './bag'
 
 mongoose.Promise = global.Promise
 
-mongoose.connect(`mongodb://localhost:27017/bagbank`, {
+mongoose.connect(`${process.env.MONGODB_URI}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

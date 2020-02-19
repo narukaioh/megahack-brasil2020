@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 _mongoose["default"].Promise = global.Promise;
 
-_mongoose["default"].connect("mongodb://localhost:27017/bagbank", {
+_mongoose["default"].connect("".concat(process.env.MONGODB_URI), {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });

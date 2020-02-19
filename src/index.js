@@ -1,3 +1,4 @@
+import '@babel/polyfill'
 require('dotenv').config()
 
 import server from './server'

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/services/mongodb/bag/index.js"],"names":["Bag"],"mappings":";;;;;;;AAAA;;AACA;;;;eAEe,yBAAWA,kBAAX,C","sourcesContent":["import Bag from './schema'\nimport BagService from './service'\n\nexport default BagService(Bag)"],"file":"index.js"}
